@@ -26,6 +26,7 @@ python app.py
 
 ```bash
 uv run ruff check .
+uv run ruff format --check .
 uv run pytest
 pre-commit install
 ```
