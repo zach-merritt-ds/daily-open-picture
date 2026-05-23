@@ -5,10 +5,5 @@
       "source": "/(.*)",
       "destination": "/app.py"
     }
-  ],
-  "functions": {
-    "app.py": {
-      "excludeFiles": "{tests/**,.pytest_cache/**,.ruff_cache/**,.venv/**,__pycache__/**}"
-    }
-  }
+  ]
 }
