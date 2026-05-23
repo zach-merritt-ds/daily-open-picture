@@ -1,0 +1,26 @@
+[project]
+name = "daily-picture-webapp"
+version = "0.1.0"
+description = "A small Flask app that shows one open licensed picture per day."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "Flask==3.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.4",
+    "ruff==0.15.14",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

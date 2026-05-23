@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daily Open Picture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="page">
+      <section class="picture-shell" aria-label="Daily open licensed picture">
+        <p class="eyebrow">{{ picture.date }}</p>
+        <h1>{{ picture.title }}</h1>
+
+        <figure>
+          <img src="{{ picture.image_url }}" alt="{{ picture.description or picture.title }}">
+          <figcaption>
+            <span>{{ picture.description }}</span>
+            <a href="{{ picture.file_page }}">View source</a>
+          </figcaption>
+        </figure>
+
+        <footer>
+          <span>By {{ picture.artist }}</span>
+          {% if picture.license_url %}
+            <a href="{{ picture.license_url }}">{{ picture.license }}</a>
+          {% else %}
+            <span>{{ picture.license }}</span>
+          {% endif %}
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
